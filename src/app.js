@@ -10,6 +10,7 @@ DisplayTemp = function() {
 
 var temperature = document.getElementById('temperature'); {
   temperature.innerHTML = thermostat.temperature();
+  TemperatureColour();
 };
 
 var upButton = document.getElementById('upButton');
@@ -34,14 +35,8 @@ resetButton.onclick = function() {
                                   };
 
 var saveButton = document.getElementById('saveButton');
-saveButton.checked = function() {
-                                   if (this.checked) {
-                                     thermostat.switchMode();
-                                     TemperatureColour();
-                                     DisplayTemp();
-                                   } else {
-                                     thermostat.switchMode();
-                                     TemperatureColour();
-                                     DisplayTemp();
-                                   };
+saveButton.onclick = function() {
+                                  thermostat.switchMode();
+                                  DisplayTemp();
+                                  TemperatureColour();
                                  };

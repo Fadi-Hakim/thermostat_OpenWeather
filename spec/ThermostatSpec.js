@@ -61,8 +61,13 @@ describe('Thermostat', function() {
 
   it('changes color depending on temperature', function() {
     thermostat.temp = 17;
-    thermostat.colorChange();
-    expect(thermostat.col).toEqual('green');
+    expect(thermostat.colorChange()).toEqual('green');
+  });
+
+  it('changes temp when temp is larger than 25 when save power mode is on', function() {
+    thermostat.temp = 26;
+    thermostat.switchMode();
+    expect(thermostat.temp).toEqual(25);
   });
 
 });

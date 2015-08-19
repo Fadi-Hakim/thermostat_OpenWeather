@@ -27,16 +27,19 @@ Thermostat.prototype.decreaseTemperature = function() {
   }
 };
 
-// Thermostat.prototype.powerSave = function() {
-//   return this.isPowerSaveOn;
-// };
+ Thermostat.prototype.powerSave = function() {
+   return this.isPowerSaveOn;
+};
 
 Thermostat.prototype.switchMode = function() {
-  if (this.isPowerSaveOn = true) {
-    this.isPowerSaveOn = false;
-  } else {
-    this.isPowerSaveOn = true;
-  }
+    if (this.isPowerSaveOn = true) {
+      this.isPowerSaveOn = false;
+    } else {
+      this.isPowerSaveOn = true;
+    }
+    if (this.temp > 25) {
+      this.temp = 25
+    }
 };
 
 Thermostat.prototype.resetTemperature = function() {
@@ -45,10 +48,10 @@ Thermostat.prototype.resetTemperature = function() {
 
 Thermostat.prototype.colorChange = function() {
   if (this.temp < 18) {
-    this.col = 'green';
+    return  'green';
   } else if (this.temp >= 25) {
-    this.col = 'red';
+    return 'red';
   } else {
-    this.col = 'orange';
+    return 'orange';
   }
 };
