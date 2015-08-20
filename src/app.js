@@ -12,6 +12,11 @@ $(document).ready(function () {
 
   DisplayTemp();
 
+  $('#apiweather').show(function() {
+    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric",function(result) {
+      apiweather.innerHTML = result.weather[0].description+": "+result.wind.speed+": "+result.main.temp;
+    });
+  });
 
   $('#upButton').click(function() {
     thermostat.increaseTemperature();
